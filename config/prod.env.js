@@ -1,4 +1,3 @@
 module.exports = {
-  NODE_ENV: '"dev"',
-  STATS: '"dist"' // MOCK 开关
+  NODE_ENV: '"dev"'
 }

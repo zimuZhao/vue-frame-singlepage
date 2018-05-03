@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import {getInfo} from '@/api/index'
+
 export default {
   name: 'Index',
   components: {},
@@ -15,6 +17,9 @@ export default {
   computed: {},
   watch: {},
   mounted() {
+    getInfo({appName: '接口测试'}).then((data) => {
+      console.warn(data)
+    })
   },
   methods: {},
 }

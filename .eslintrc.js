@@ -15,14 +15,16 @@ module.exports = {
   ],
   rules: {
     'arrow-parens': 0,
+    // allow async-await
     'generator-star-spacing': 'off',
     'comma-dangle': ['error', 'always-multiline'],
     'indent': ['error', 2, {'SwitchCase': 1}],
     'linebreak-style': ['error', 'unix'],
     'no-unused-expressions': 0,
     'space-before-function-paren': 0,
-    'no-console': process.env.STATS === 'dist' ? 'error' : 'off',
-    'no-debugger': process.env.STATS === 'dist' ? 'error' : 'off',
+    // allow console & debugger during development
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
   globals: {
     'document': true,

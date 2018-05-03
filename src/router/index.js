@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
-const Index = () => import('@/views/index.vue')
-const Another = () => import('@/views/another.vue')
+const Index = () => import('@/components/index.vue')
+const Another = () => import('@/components/another.vue')
 
 let router = new Router({
   routes: [
