@@ -1,0 +1,17 @@
+.DS_Store
+npm-debug.log
+.idea
+.zip
+/test
+/dev
+/dist
+/tmp
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+/node_modules/
