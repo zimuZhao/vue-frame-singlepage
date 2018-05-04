@@ -1,5 +1,5 @@
 <template>
-  <h1>This is index</h1>
+  <p>{{showText}}</p>
 </template>
 
 <script>
@@ -12,13 +12,15 @@ export default {
   mixins: [],
   props: {},
   data() {
-    return {}
+    return {
+      showText: '',
+    }
   },
   computed: {},
   watch: {},
   mounted() {
     getInfo({appName: '接口测试'}).then((data) => {
-      console.warn(data)
+      this.showText = data
     })
   },
   methods: {},

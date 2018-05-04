@@ -1,10 +1,18 @@
-import API from './api'
-// import {DEBUG} from './config'
+import Mock from 'mockjs'
+import API from '@/public/js/api'
+import {HOST, DEBUG} from '@/public/js/config'
 
 export const getInfo = function(params = {}) {
+  const mock = true
   const baseUrl = '/sla/user'
-  const paramsSend = {
+  let paramsSend = {
     appName: params.appName,
+  }
+
+  if (DEBUG && mock) {
+    const _res = require('@/mock/index').mockData
+    Mock.mock((HOST + baseUrl), _res)
+    paramsSend = {}
   }
 
   return new Promise((resolve, reject) => {

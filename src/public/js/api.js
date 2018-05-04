@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {HOST} from './config'
+import {HOST} from '@/public/js/config'
 
 function ajax(url, type, options) {
   return new Promise((resolve) => {
