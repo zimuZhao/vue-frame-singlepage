@@ -19,7 +19,7 @@ module.exports = {
     'generator-star-spacing': 'off',
     'comma-dangle': ['error', 'always-multiline'],
     'indent': ['error', 2, {'SwitchCase': 1}],
-    'linebreak-style': ['error', 'unix'],
+    // 'linebreak-style': ['error', 'unix'],
     'no-unused-expressions': 0,
     'space-before-function-paren': 0,
     // allow console & debugger during development

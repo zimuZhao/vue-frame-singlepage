@@ -1,6 +1,7 @@
-import Mock from 'mockjs'
 import API from '@/public/js/api'
 import {HOST, DEBUG} from '@/public/js/config'
+let MOCK
+if (process.env.NODE_ENV === 'development') { MOCK = require('mockjs') }
 
 export const getInfo = function(params = {}) {
   const mock = true
@@ -10,8 +11,8 @@ export const getInfo = function(params = {}) {
   }
 
   if (DEBUG && mock) {
-    const _res = require('@/mock/index').mockData
-    Mock.mock((HOST + baseUrl), _res)
+    const _res = require('@/mock/index').default
+    MOCK.mock((HOST + baseUrl), _res)
     paramsSend = {}
   }
 

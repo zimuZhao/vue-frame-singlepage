@@ -1,4 +1,4 @@
-export const mockData = {
+export default {
   'errno': 0,
   'msg': '成功',
   'data': {
