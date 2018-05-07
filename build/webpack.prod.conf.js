@@ -17,9 +17,13 @@ baseWebpackConfig.output.chunkFilename = '[name].[chunkhash].js'
 const env = config.build.env
 
 const webpackConfig = merge(baseWebpackConfig, {
-  entry: {  // 分离打包
-    // elementui: ['element-ui'],
+  entry: {
     vendors: ['vue', 'vue-router'],
+  },
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.runtime.esm.js',
+    },
   },
   module: {
     rules: utils.styleLoaders({

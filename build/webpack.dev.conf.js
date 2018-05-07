@@ -15,6 +15,11 @@ Object.keys(baseWebpackConfig.entry).forEach(function(name) {
 baseWebpackConfig.output.chunkFilename = '[name].[chunkhash].js'            // 路由js命名 这个拆分路由 模块依赖脚本文件
 
 module.exports = merge(baseWebpackConfig, {
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.esm.js',
+    },
+  },
   module: {
     rules: utils.styleLoaders({sourceMap: config.dev.cssSourceMap}),
   },
