@@ -18,7 +18,8 @@ const env = config.build.env
 
 const webpackConfig = merge(baseWebpackConfig, {
   entry: {
-    vendors: ['vue', 'vue-router'],
+    elementui: ['element-ui'],
+    vendors: ['vue', 'vuex', 'vue-router', 'lodash'],
   },
   resolve: {
     alias: {

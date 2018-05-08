@@ -1,0 +1,2 @@
+export const SET_USERINFO_STORE = 'SET_USERINFO_STORE'
+export const SET_MENU_STORE = 'SET_MENU_STORE'
