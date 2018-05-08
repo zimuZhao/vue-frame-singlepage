@@ -3,16 +3,19 @@ import {HOST, DEBUG} from '@/public/js/config'
 let MOCK
 if (process.env.NODE_ENV === 'development') { MOCK = require('mockjs') }
 
-export const getInfo = function(params = {}) {
+export const getTable = function(params = {}) {
   const mock = true
-  const baseUrl = '/sla/user'
+  const baseUrl = '/get/table'
   let paramsSend = {
-    appName: params.appName,
+    currentPage: params.currentPage,
+    pageSize: params.pageSize,
   }
 
   if (DEBUG && mock) {
     const _res = require('@/mock/index').default
     MOCK.mock((HOST + baseUrl), _res)
+    console.log(`------------------table------------------------`)
+    console.log(JSON.stringify(paramsSend))
     paramsSend = {}
   }
 
